@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class aStar {
-	// ´´½¨ËÑË÷ÇøÓò£¬1´ú±íÕÏ°­Îï
-	public static final int[][] NODES = {
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½
+	public static final int[][] NODES = {nihubu
 	{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -25,15 +25,15 @@ public class aStar {
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, };
 
-	// ÉèÖÃÏàÁÚÁ½¸ö½ÚµãÆ½ÒÆµÄ¾àÀëstepºÍ¶Ô½ÇÏßÒÆ¶¯¾àÀëstepd
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Æ½ï¿½ÆµÄ¾ï¿½ï¿½ï¿½stepï¿½Í¶Ô½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½stepd
 	public static final double STEP = 1;
 	public static final double STEPD = 1.41;
-	// open±í£¬´æ·ÅËùÓÐ»á±»¿¼ÂÇ¼ÆËã×î¶ÌÂ·¾¶µÄ½Úµã
+	// openï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»á±»ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ä½Úµï¿½
 	private ArrayList<Node> openList = new ArrayList<Node>();
-	// close±í£¬´æ·Å²»»áÔÙ±»¿¼ÂÇµÄ½Úµã
+	// closeï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ï¿½ÇµÄ½Úµï¿½
 	private ArrayList<Node> closeList = new ArrayList<Node>(); 
 
-	// ±éÀúopen±í£¬ÕÒµ½FÖµ×îÐ¡µÄ½Úµã
+	// ï¿½ï¿½ï¿½ï¿½openï¿½ï¿½ï¿½Òµï¿½FÖµï¿½ï¿½Ð¡ï¿½Ä½Úµï¿½
 	public Node findMinFNodeInOpneList() {
 		Node tempNode = openList.get(0);
 		for (Node node : openList) {
@@ -44,13 +44,13 @@ public class aStar {
 		return tempNode;
 	}
 
-	// ÕÒÒ»¸öµãµÄÁÚ¾Ó½Úµã£¨ÉÏÏÂ×óÓÒ8¸ö½Úµã£©
+	// ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾Ó½Úµã£¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8ï¿½ï¿½ï¿½Úµã£©
 	public ArrayList<Node> findNeighborNodes(Node currentNode) {
 		ArrayList<Node> arrayList = new ArrayList<Node>();
 		int topX = currentNode.x - 1;
-		int topY = currentNode.y;// ÉÏÁÚ¾Ó½ÚµãÁÐÏÂ±ê²»±ä£¬ÐÐÏÂ±ê-1
+		int topY = currentNode.y;// ï¿½ï¿½ï¿½Ú¾Ó½Úµï¿½ï¿½ï¿½ï¿½Â±ê²»ï¿½ä£¬ï¿½ï¿½ï¿½Â±ï¿½-1
 		if (canReach(topX, topY) && !exists(closeList, topX, topY)) {
-			arrayList.add(new Node(topX, topY));// Èô¼ÆËã³öµÄÏÂ±êÔÚËÑË÷ÇøÓòÄÚÇÒ²»ÔÚclose±íÄÚ£¬Ôò¼ÓÈëÁÐ±í
+			arrayList.add(new Node(topX, topY));// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½closeï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 		}
 		int bottomX = currentNode.x + 1;
 		int bottomY = currentNode.y;
@@ -91,10 +91,10 @@ public class aStar {
 				&& !exists(closeList, rightbottomX, rightbottomY)) {
 			arrayList.add(new Node(rightbottomX, rightbottomY));
 		}
-		return arrayList;// ·µ»ØÁÚ¾ÓÁÐ±í
+		return arrayList;// ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½Ð±ï¿½
 	}
 
-	// ÒÀ¿¿ÏÂ±êÅÐ¶ÏÒ»¸öµãÊÇ·ñÔÚËÑË÷ÇøÓòÄÚ£¨ÏÂ±êÔÚ·¶Î§ÄÚÇÒ²»ÊÇÕÏ°­ÎïÎ»ÖÃ£©
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½Ð¶ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½Â±ï¿½ï¿½Ú·ï¿½Î§ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½
 	public boolean canReach(int x, int y) {
 		if (x >= 0 && x < NODES.length && y >= 0 && y < NODES[0].length) {
 			return NODES[x][y] == 0;
@@ -102,40 +102,40 @@ public class aStar {
 		return false;
 	}
 
-	// ÕÒ×î¶ÌÂ·¾¶
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	public Node findPath(Node startNode, Node endNode) {
 
-		// °ÑÆðµã·ÅÈëopen±í
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½openï¿½ï¿½
 		openList.add(startNode);
 
 		while (openList.size() > 0) {
-			// ±éÀúopen±í£¬²éÕÒ FÖµ×îÐ¡µÄ½Úµã£¬°ÑËü×÷Îªµ±Ç°Òª´¦ÀíµÄ½Úµã
+			// ï¿½ï¿½ï¿½ï¿½openï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FÖµï¿½ï¿½Ð¡ï¿½Ä½Úµã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ç°Òªï¿½ï¿½ï¿½ï¿½Ä½Úµï¿½
 			Node currentNode = findMinFNodeInOpneList();
-			// °ÑÉÏÃæÕÒµ½µÄFÖµ×îÐ¡µÄ½Úµã£¨µ±Ç°Òª´¦ÀíµÄ½Úµã£©´Óopen±íÒÆ³ý²¢¼ÓÈëclose±í
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½FÖµï¿½ï¿½Ð¡ï¿½Ä½Úµã£¨ï¿½ï¿½Ç°Òªï¿½ï¿½ï¿½ï¿½Ä½Úµã£©ï¿½ï¿½openï¿½ï¿½ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½closeï¿½ï¿½
 			openList.remove(currentNode);
 			closeList.add(currentNode);
-			// ÕÒµ½µ±Ç°½ÚµãµÄÁÚ¾Ó½Úµã
+			// ï¿½Òµï¿½ï¿½ï¿½Ç°ï¿½Úµï¿½ï¿½ï¿½Ú¾Ó½Úµï¿½
 			ArrayList<Node> neighborNodes = findNeighborNodes(currentNode);
-			// ±éÀúÁÚ¾Ó½Úµã
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾Ó½Úµï¿½
 			for (Node node : neighborNodes) {
-				// Èç¹ûÄ³ÁÚ¾Ó½ÚµãÒÑ¾­ÔÚopen±íÖÐ£¬±È½ÏGÖµ´óÐ¡£¬Ñ¡ÔñGÖµ½ÏÐ¡µÄ½Úµã×÷Îª¸¸½áµã
+				// ï¿½ï¿½ï¿½Ä³ï¿½Ú¾Ó½Úµï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½openï¿½ï¿½ï¿½Ð£ï¿½ï¿½È½ï¿½GÖµï¿½ï¿½Ð¡ï¿½ï¿½Ñ¡ï¿½ï¿½GÖµï¿½ï¿½Ð¡ï¿½Ä½Úµï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½
 				if (exists(openList, node)) {
 					foundPoint(currentNode, node);
 				} else {
-					// Èç¹ûÄ³ÁÚ¾Ó½Úµã²»ÔÚopen±íÖÐ£¬¼ÆËãGÖµ¡¢HÖµ²¢Ìí¼Ó¸¸½áµã
+					// ï¿½ï¿½ï¿½Ä³ï¿½Ú¾Ó½Úµã²»ï¿½ï¿½openï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½GÖµï¿½ï¿½HÖµï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½
 					notFoundPoint(currentNode, endNode, node);
 				}
 			}
-			// Èç¹ûÖÕµãÔÚopen±íÀï£¬·µ»ØÖÕµã
+			// ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½openï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½
 			if (find(openList, endNode) != null) {
 				return find(openList, endNode);
 			}
 		}
-		// Èç¹ûÖÕµãÔÚopen±íÀï£¬·µ»ØÖÕµã£¬·ñÔò·µ»Ønull
+		// ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½openï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½ï¿½Õµã£¬ï¿½ï¿½ï¿½ò·µ»ï¿½null
 		return find(openList, endNode);
 	}
 
-	// ±È½ÏGÖµ´óÐ¡£¬Ñ¡ÔñGÖµ½ÏÐ¡µÄ½Úµã×÷Îª¸¸½áµã
+	// ï¿½È½ï¿½GÖµï¿½ï¿½Ð¡ï¿½ï¿½Ñ¡ï¿½ï¿½GÖµï¿½ï¿½Ð¡ï¿½Ä½Úµï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½
 	private void foundPoint(Node tempStart, Node node) {
 		double G = calcG(tempStart, node);
 		if (G < node.G) {
@@ -145,7 +145,7 @@ public class aStar {
 		}
 	}
 
-	// ¼ÆËãGÖµ¡¢HÖµ£¬Ìí¼Ó¸¸½áµã
+	// ï¿½ï¿½ï¿½ï¿½GÖµï¿½ï¿½HÖµï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½
 	private void notFoundPoint(Node tempStart, Node end, Node node) {
 		node.parent = tempStart;
 		node.G = calcG(tempStart, node);
@@ -154,7 +154,7 @@ public class aStar {
 		openList.add(node);
 	}
 
-	// ¼ÆËãGÖµ£¨´ÓÆðµãµ½µ±Ç°½ÚµãµÄÂ·³Ì£©
+	// ï¿½ï¿½ï¿½ï¿½GÖµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ãµ½ï¿½ï¿½Ç°ï¿½Úµï¿½ï¿½Â·ï¿½Ì£ï¿½
 	private double calcG(Node start, Node node) {
 		double G;
 		if (Math.abs(node.x - start.x) + Math.abs(node.y - start.y) == 2)
@@ -166,7 +166,7 @@ public class aStar {
 		return G + parentG;
 	}
 
-	// ¼ÆËãHÖµ£¨´Óµ±Ç°½Úµãµ½ÖÕµãµÄÖ±Ïß¾àÀë£©
+	// ï¿½ï¿½ï¿½ï¿½HÖµï¿½ï¿½ï¿½Óµï¿½Ç°ï¿½Úµãµ½ï¿½Õµï¿½ï¿½Ö±ï¿½ß¾ï¿½ï¿½ë£©
 	private double calcH(Node end, Node node) {
 		double step = Math.sqrt(Math.pow((node.x - end.x), 2)
 				+ Math.pow((node.y - end.y), 2));
@@ -178,7 +178,7 @@ public class aStar {
 		Node endNode = new Node(6, 18);
 		Node parent = new aStar().findPath(startNode, endNode);
 		
-		System.out.println("ËÑË÷ÇøÓò£º ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
 		for (int i = 0; i < NODES.length; i++) {
 	            for (int j = 0; j < NODES[0].length; j++) {
 	                System.out.print(NODES[i][j] + ", ");
@@ -188,8 +188,8 @@ public class aStar {
 		 
 		ArrayList<Node> arrayList = new ArrayList<Node>();
 		System.out.println("\n");
-		System.out.println("ËÑË÷Â·¾¶£º ");
-		System.out.print("×î¶ÌÂ·¾¶Îª£º " + parent.G);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ ");
+		System.out.print("ï¿½ï¿½ï¿½Â·ï¿½ï¿½Îªï¿½ï¿½ " + parent.G);
 		while (parent != null) {
 			arrayList.add(new Node(parent.x, parent.y));
 			parent = parent.parent;
@@ -210,7 +210,7 @@ public class aStar {
 
 	}
 
-	// ÔÚÁÐ±íÄÚËÑË÷Ä³¸ö½Úµã£¬ÕÒµ½Ôò·µ»Ø½Úµã£¬ÕÒ²»µ½·µ»Ønull
+	// ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Úµã£¬ï¿½Òµï¿½ï¿½ò·µ»Ø½Úµã£¬ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½null
 	public static Node find(List<Node> nodes, Node point) {
 		for (Node n : nodes)
 			if ((n.x == point.x) && (n.y == point.y)) {
@@ -219,7 +219,7 @@ public class aStar {
 		return null;
 	}
 
-	// ÅÐ¶ÏÄ³¸ö½ÚµãÔÚ²»ÔÚÄ³ÁÐ±íÄÚ
+	// ï¿½Ð¶ï¿½Ä³ï¿½ï¿½ï¿½Úµï¿½ï¿½Ú²ï¿½ï¿½ï¿½Ä³ï¿½Ð±ï¿½ï¿½ï¿½
 	public static boolean exists(List<Node> nodes, Node node) {
 		for (Node n : nodes) {
 			if ((n.x == node.x) && (n.y == node.y)) {
@@ -229,7 +229,7 @@ public class aStar {
 		return false;
 	}
 
-	// ¸ù¾ÝÏÂ±êÅÐ¶ÏÄ³¸ö½ÚµãÔÚ²»ÔÚÄ³ÁÐ±íÄÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½Ð¶ï¿½Ä³ï¿½ï¿½ï¿½Úµï¿½ï¿½Ú²ï¿½ï¿½ï¿½Ä³ï¿½Ð±ï¿½ï¿½ï¿½
 	public static boolean exists(List<Node> nodes, int x, int y) {
 		for (Node n : nodes) {
 			if ((n.x == x) && (n.y == y)) {
@@ -239,7 +239,7 @@ public class aStar {
 		return false;
 	}
 
-	// Ä³¸ö½Úµã£¬ÓÐÏÂ±ê¡¢FÖµ¡¢GÖµ¡¢HÖµ¡¢¸¸½áµã
+	// Ä³ï¿½ï¿½ï¿½Úµã£¬ï¿½ï¿½ï¿½Â±ê¡¢FÖµï¿½ï¿½GÖµï¿½ï¿½HÖµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static class Node {
 		public Node(int x, int y) {
 			this.x = x;
